@@ -161,6 +161,20 @@ npm run dev
 2. **Augment:** The controller builds a prompt with the new description plus structured snippets from each similar incident (title, severity, description, root cause, remediation, customer).
 3. **Generate:** OpenAI Chat Completions returns recommended next actions. The client shows **Context: similar incidents** (with links to detail) and **Recommended next actions** (rendered as Markdown).
 
+### Incident Intelligence UI
+
+**Incident description** — enter a plain-language report and run **Get recommendations** (retrieval + model call):
+
+![Incident description input and Get recommendations](docs/images/incident-intelligence-form.png)
+
+**Context: similar incidents** — incidents ranked by MongoDB full-text search on `title` and `description` (or recent records when there is no strong match):
+
+![Context: similar incidents table from full-text search](docs/images/incident-intelligence-similar-incidents.png)
+
+**Recommended next actions** — model output (triage, mitigation, communications, escalation), with Markdown rendering:
+
+![Recommended next actions from the intelligence API](docs/images/incident-intelligence-recommendations.png)
+
 ## Next steps / future enhancements
 
 - Pagination controls and deep links for list filters.  
