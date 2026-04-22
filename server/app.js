@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import incidentsRouter from './routes/incidents.js';
 import dashboardRouter from './routes/dashboard.js';
+import intelligenceRouter from './routes/intelligence.js';
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api/incidents', incidentsRouter);
 app.use('/api/dashboard', dashboardRouter);
+app.use('/api/intelligence', intelligenceRouter);
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Not found' });

@@ -53,3 +53,10 @@ export function getBySeverity() {
 export function getOpenByCustomer() {
   return request('/api/dashboard/open-by-customer');
 }
+
+export function postIntelligenceRecommend(description) {
+  return request('/api/intelligence/recommend', {
+    method: 'POST',
+    body: JSON.stringify({ description }),
+  });
+}
