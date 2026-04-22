@@ -1,0 +1,16 @@
+{
+  "name": "incident-intelligence",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Incident Intelligence Dashboard monorepo",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "seed": "node server/seed/seedData.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
